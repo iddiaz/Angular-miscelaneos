@@ -1,11 +1,23 @@
+import { UsuarioDetalleComponent } from './components/usuario/usuario-detalle.component';
+import { UsuarioEditarComponent } from './components/usuario/usuario-editar.component';
+import { UsuarioNuevoComponent } from './components/usuario/usuario-nuevo.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 
+// para rutas hijas imaginemos que estamos usando... usuario/10/nuevo
 
 const app_routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'usuario', component: UsuarioComponent },
+  { path: 'usuario/:id', // imaginemos que enviamos el parámetro 10
+    component: UsuarioComponent,
+    children: [
+      {path: 'nuevo', component: UsuarioNuevoComponent },
+      {path: 'editar', component: UsuarioEditarComponent },
+      {path: 'detalle', component: UsuarioDetalleComponent },
+      { path: '**', pathMatch: 'full', redirectTo: 'nuevo' }
+      
+    ] },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

@@ -1,3 +1,4 @@
+import { APP_ROUTING } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -9,6 +10,12 @@ import { CssComponent } from './components/css/css.component';
 import { ClasesComponent } from './components/clases/clases.component';
 import { ResaltadoDirective } from './directives/resaltado.directive';
 import { NgSwitchComponent } from './component/ng-switch/ng-switch.component';
+import { HomeComponent } from './components/home/home.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
+import { UsuarioNuevoComponent } from './components/usuario/usuario-nuevo.component';
+import { UsuarioEditarComponent } from './components/usuario/usuario-editar.component';
+import { UsuarioDetalleComponent } from './components/usuario/usuario-detalle.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +24,19 @@ import { NgSwitchComponent } from './component/ng-switch/ng-switch.component';
     CssComponent,
     ClasesComponent,
     ResaltadoDirective,
-    NgSwitchComponent
+    NgSwitchComponent,
+    HomeComponent,
+    UsuarioComponent,
+    UsuarioNuevoComponent,
+    UsuarioEditarComponent,
+    UsuarioDetalleComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
